@@ -26,12 +26,12 @@ tsconfig.node.json	Node 配置
 Buttons	按钮类组件
 .idea	IDE 配置目录
 .out	构建输出目录
-audio	音频
+audios	音频
 soundEffects	音效
 fonts	字体
 images	图片
 styles	样式表
-video	视频
+videos	视频
 electron.vite.config.ts	Web 应用配置
 electron-builder.yml	应用打包配置
 tsconfig.web.json	类型检查配置
