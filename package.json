@@ -8,6 +8,7 @@
   "scripts": {
     "start": "electron-vite preview",
     "dev": "electron-vite dev",
+    "dev:web": "vite ./src/renderer",
     "build": "npm run typecheck && electron-vite build",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",

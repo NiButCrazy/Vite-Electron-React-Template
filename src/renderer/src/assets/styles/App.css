@@ -128,7 +128,7 @@ code {
   bottom: 30px;
   margin: 0 auto;
   padding: 15px 0;
-  font-family: 'Menlo', 'Lucida Console', monospace;
+  font-family: 'Menlo', 'Microsoft YaHei UI', 'Lucida Console', monospace;
   display: inline-flex;
   overflow: hidden;
   align-items: center;
