@@ -11,8 +11,6 @@ files:
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
   - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
   - '!{.out/dist,.out/build}'
-asarUnpack:
-  - resource/**
 win:
   executableName: test
 nsis:
@@ -20,6 +18,9 @@ nsis:
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
   createDesktopShortcut: always
+  language: 2052
+  oneClick: false  # 必须禁用一键安装
+  allowToChangeInstallationDirectory: true  # 允许用户修改
 mac:
   entitlementsInherit: .out/build/entitlements.mac.plist
   extendInfo:
