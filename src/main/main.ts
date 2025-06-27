@@ -1,7 +1,9 @@
-import { app, shell, BrowserWindow, ipcMain } from 'electron'
+import { app, shell, BrowserWindow, ipcMain, session } from 'electron'
+import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../static/icon.png?asset'
+
 
 function createWindow(): void {
   // 创建浏览器窗口
@@ -10,15 +12,17 @@ function createWindow(): void {
     height: 670,
     show: false,
     autoHideMenuBar: true,
+    backgroundMaterial: 'auto',
     ...(process.platform === 'linux' ? {} : { icon }),
     webPreferences: {
       preload: join(__dirname, '../preload/index.js'),
-      sandbox: false
+      sandbox: false,
     }
   })
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
+    if (is.dev) mainWindow.webContents.openDevTools()
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {
@@ -31,8 +35,22 @@ function createWindow(): void {
   if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
     mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
   } else {
-    mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
+    mainWindow.loadFile(join(__dirname, `../renderer/index.html`))
   }
+}
+
+/**
+ * 加载谷歌扩展
+ */
+function load_extensions() {
+  installExtension(REACT_DEVELOPER_TOOLS).then(() => {
+    session.defaultSession.getAllExtensions().map((e) => {
+      session.defaultSession.loadExtension(e.path)
+      console.log(`已加载扩展:  ${e.name}`)
+    })
+  }).catch((err) => {
+      console.log('无法加载扩展: ', err)
+  })
 }
 
 // 当 Electron 完成初始化并准备好创建浏览器窗口时，将调用此方法
@@ -40,6 +58,8 @@ function createWindow(): void {
 app.whenReady().then(() => {
   // 为 Windows 设置应用用户模型 ID
   electronApp.setAppUserModelId('com.electron')
+  // 只在开发环境加载扩展
+  if (is.dev) load_extensions()
 
   // 开发中 F12 的默认打开或关闭 DevTools
   // 并在生产环境中忽略 CommandOrControl + R
