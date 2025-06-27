@@ -1,15 +1,12 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="网页运行" type="js.build_tools.npm">
+  <configuration default="false" name="构建预览" type="js.build_tools.npm">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="dev:web" />
+      <script value="start" />
     </scripts>
     <node-interpreter value="project" />
     <envs />
-    <EXTENSION ID="com.intellij.lang.javascript.buildTools.npm.rc.StartBrowserRunConfigurationExtension">
-      <browser start="true" url="http://localhost:5173" />
-    </EXTENSION>
     <method v="2" />
   </configuration>
 </component>

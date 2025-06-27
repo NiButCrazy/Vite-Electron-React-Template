@@ -6,14 +6,26 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   main: {
     plugins: [externalizeDepsPlugin()],
+    publicDir: './static',
     build: {
-      outDir: '.out/main'
+      outDir: '.out/main',
+      rollupOptions: {
+        input: {
+          index: resolve(__dirname, 'src/main/main.ts')
+        }
+      }
     }
   },
   preload: {
     plugins: [externalizeDepsPlugin()],
+    publicDir: './static',
     build: {
-      outDir: '.out/preload'
+      outDir: '.out/preload',
+      rollupOptions: {
+        input: {
+          index: resolve(__dirname, 'src/preload/preload.ts')
+        }
+      }
     }
   },
   renderer: {

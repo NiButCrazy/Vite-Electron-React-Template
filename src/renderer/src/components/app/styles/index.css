@@ -46,9 +46,16 @@ ul {
 }
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  user-select: none;
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
+  background-image: url('../assets/wavy-lines.svg');
+  background-size: cover;
   line-height: 1.6;
   font-family:
           Inter,
@@ -66,4 +73,29 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+
+code {
+  font-weight: 600;
+  padding: 3px 5px;
+  border-radius: 2px;
+  background-color: var(--color-background-mute);
+  font-family:
+          ui-monospace,
+          SFMono-Regular,
+          SF Mono,
+          Menlo,
+          Consolas,
+          Liberation Mono,
+          monospace;
+  font-size: 85%;
 }

@@ -1,7 +1,7 @@
 index.tree.tsv	📝 树状视图注释
 __comment__	注释文件根
 src	源代码目录
-resource	主进程资源
+static	静态资源目录
 dist	打包输出目录
 build	打包资源目录
 .gitignore	🔕 Git 忽略文件配置
@@ -10,15 +10,13 @@ index.html	项目入口视图
 package.json	项目包管理
 README.md	🔖 自述文件
 vite.config.ts	Vite 插件配置
-assets	静态资源目录
+assets	组件资源目录
 components	组件库
 hooks	自定义钩子
 pages	业务界面
 utils	工具模块
-App.tsx	App 根组件
 main.tsx	项目逻辑入口
 vite-env.d.ts	Vite 路径配置
-resource.ts	资源管理模块
 router.tsx	路由管理模块
 config.ts	配置管理模块
 tsconfig.json	TS 配置文件入口
@@ -38,3 +36,8 @@ tsconfig.web.json	类型检查配置
 main	主进程
 preload	预加载
 renderer	渲染器
+lib	组件代码库
+home	首页
+version	版本组件
+app	应用入口
+button	按钮组件

@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router";
-import App from "../App.tsx";
-import Home from "../pages/Home.tsx";
+import { createHashRouter } from "react-router";
+import App from "@renderer/components/app";
+import { Home } from "@renderer/components/pages";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     Component: App,

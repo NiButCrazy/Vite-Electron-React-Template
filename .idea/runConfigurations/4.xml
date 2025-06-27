@@ -1,10 +1,11 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="开发调试" type="js.build_tools.npm">
+  <configuration default="false" name="热重载调试" type="js.build_tools.npm">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
       <script value="dev" />
     </scripts>
+    <arguments value="-w" />
     <node-interpreter value="project" />
     <envs />
     <method v="2" />

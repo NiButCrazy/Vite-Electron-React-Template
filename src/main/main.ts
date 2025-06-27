@@ -1,8 +1,7 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import icon from '../../resource/icon.png?asset'
-
+import icon from '../../static/icon.png?asset'
 
 function createWindow(): void {
   // 创建浏览器窗口
@@ -39,7 +38,7 @@ function createWindow(): void {
 // 当 Electron 完成初始化并准备好创建浏览器窗口时，将调用此方法
 // 某些 API 只能在此事件发生后使用
 app.whenReady().then(() => {
-  // Set app user model id for windows
+  // 为 Windows 设置应用用户模型 ID
   electronApp.setAppUserModelId('com.electron')
 
   // 开发中 F12 的默认打开或关闭 DevTools
