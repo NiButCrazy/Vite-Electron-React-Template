@@ -10,9 +10,16 @@
     "composite": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
+    /* 路径别名 */
     "paths": {
       "@renderer/*": [
-        "src/renderer/src/*"
+        "./src/renderer/src/*"
+      ],
+      "@components/*": [
+        "./src/renderer/src/components/*"
+      ],
+      "@utils/*": [
+        "./src/renderer/src/utils/*"
       ]
     },
     "module": "ESNext",

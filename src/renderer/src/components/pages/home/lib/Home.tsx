@@ -1,4 +1,4 @@
-import Button from "@renderer/components/button";
+import Button from "@components/button";
 import electronLogo from "../assets/electron.svg";
 import styles from "../styles/Home.module.css"
 
