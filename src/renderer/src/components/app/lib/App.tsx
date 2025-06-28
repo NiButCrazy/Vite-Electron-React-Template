@@ -5,9 +5,9 @@ import '../styles/App.module.css'
 
 function App(): React.JSX.Element {
   return (
-    < >
-      <Outlet></Outlet>
-      <Versions></Versions>
+    <>
+      <Outlet />
+      <Versions />
     </>
   )
 }

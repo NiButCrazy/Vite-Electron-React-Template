@@ -24,7 +24,7 @@ export default function Home() {
             </a>
           </div>
           <div className={ s_.action }>
-            <Button></Button>
+            <Button />
           </div>
         </div>
       </>
