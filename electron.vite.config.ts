@@ -39,6 +39,11 @@ export default defineConfig({
         '@utils': resolve(__dirname, './src/renderer/src/utils')
       }
     },
+    css: {
+      modules: {
+        localsConvention: 'camelCase'
+      }
+    },
     plugins: [
       react(),
       tailwindcss()
