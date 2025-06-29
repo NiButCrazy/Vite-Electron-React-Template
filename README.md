@@ -9,6 +9,7 @@
 - Tailwind CSS - 基础样式表
 - React Router - 路由管理
 - Zustand - 状态管理
+- Less - 样式预处理
 
 ## 项目配置
 
