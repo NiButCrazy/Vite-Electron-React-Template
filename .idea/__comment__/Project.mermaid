@@ -1,31 +1,62 @@
-flowchart TB
-
-    subgraph 组件对象
-        Button[Button] --渲染按钮--> Home[Home] --路由子组件页面--> App[App]
-    end
-    Home.tsx -.-> Home
-    App[App] --路由管理--> router-obj[路由管理器] --挂载至--> root[root<br>Dom对象]
-    subgraph 组件库
-        subgraph Button组件文件结构
-            Button.module.css --样式表-->Button.tsx[Button.tsx] --导出至--> index.ts[index.ts<br>暴露构造函数]
+flowchart LR
+    subgraph src 源代码目录
+        subgraph components[components 组件库]
+            subgraph button / Button 组件
+                subgraph assets2[assets 资源]
+                    ...1[...]
+                end
+                subgraph lib2[lib 代码]
+                    Button.tsx
+                end
+                subgraph styles2[styles 样式]
+                    ...3[...]
+                end
+                assets2 --> lib2
+                styles2 --样式表-->lib2[Button.tsx] --导出至--> index1.ts[index.ts<br>...]
+            end
+            subgraph app / App 组件
+                subgraph assets3[assets 资源]
+                    ...4[...]
+                end
+                subgraph lib3[lib 代码]
+                    App.tsx
+                end
+                subgraph styles3[styles 样式]
+                    ...6[...]
+                    index.css[index.css 全局样式]
+                end
+                assets3 --> lib3
+                styles3 --样式表-->lib3[Button.tsx] --导出至--> index3.ts[index.ts<br>...]
+            end
+            subgraph pages 业务界面组件库
+                subgraph Home 组件
+                    subgraph assets1[assets 资源]
+                        react.svg
+                        vite.svg
+                    end
+                    subgraph lib1[lib 代码]
+                        Home.tsx[Home.tsx]
+                    end
+                    subgraph styles1[styles 样式]
+                        Home.module.less
+                    end
+                    index2.ts[index.ts<br>整合导出内容]
+                    assets1--图标-->lib1
+                    styles1 --样式表-->lib1 --导出至--> index2.ts
+                end
+            end
         end
+        subgraph utils 工具模块
+            router.tsx[router.tsx 路由管理模块]
+        end
+        components --组件挂载--> router.tsx
+        main.tsx[main.tsx 逻辑入口]
+        router.tsx --路由挂载--> main.tsx
 
-        Button.tsx -.-> Button
     end
-    Home.tsx[Home.tsx]
-    App.tsx[App.tsx]
-    main.tsx[main.tsx]
-    router[router.tsx<br>路由管理模块]
-%%    组件库 --组件被路由集中管理--> router
-    router--引入router路由组件--> main.tsx
-
-
-    Home.tsx --路由默认渲染子组件--> App.tsx
-    index.ts --组件库被引用--> Home.tsx
-    App.tsx -.-> App
-    router -.-> router-obj
-    App.tsx --路由接管组件--> router
-
-    main.tsx -.渲染路由管理的组件.-> root
-    resource.ts[resource.ts<br>资源管理模块] --提供所需资源路径--> Home.tsx
-    root --唯一根节点--> index.html[index.html<br>项目入口视图]
+    subgraph public 公共资源根
+        subgraph images
+            vitelogo[vite.svg]
+        end
+    end
+    index.html[index.html 页面入口]

@@ -9,8 +9,9 @@ files:  # 指定需要包含在最终打包中的文件和文件夹，通常包�
   - '!electron.vite.config.{js,ts,mjs,cjs}'
   - '!{.eslintcache,eslint.config.mjs,.prettierignore,.prettierrc.yaml,dev-app-update.yml,CHANGELOG.md,README.md}'
   - '!{.env,.env.*,.npmrc,pnpm-lock.yaml}'
-  - '!{tsconfig.json,tsconfig.node.json,tsconfig.web.json}'
+  - '!{tsconfig.json,tsconfig.node.json,tsconfig.app.json}'
   - '!{.out/dist,.out/build}'
+  - '!static/snap'
   - '!desktop.ini'
 win:  # 配置 Windows 平台的打包选项
   executableName: test  # 设置生成的可执行文件名称

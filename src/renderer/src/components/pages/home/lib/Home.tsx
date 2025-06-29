@@ -1,5 +1,5 @@
 import Button from "@components/button";
-import electronLogo from "../assets/electron.svg";
+import electronLogo from "../assets/images/electron.svg";
 import s_ from "../styles/Home.module.less"
 
 
