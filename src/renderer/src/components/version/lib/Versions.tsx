@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import s_ from '../styles/Versions.module.css'
+import s_ from '../styles/Versions.module.less'
 
 const is_electron = true ? window.electron: false
 

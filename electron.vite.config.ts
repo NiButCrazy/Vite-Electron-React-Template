@@ -41,7 +41,8 @@ export default defineConfig({
     },
     css: {
       modules: {
-        localsConvention: 'camelCase'
+        localsConvention: 'dashesOnly',
+        generateScopedName: '[local]-[hash:5]'
       }
     },
     plugins: [
