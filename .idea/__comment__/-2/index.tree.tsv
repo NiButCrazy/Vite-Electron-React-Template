@@ -42,3 +42,6 @@ home	首页
 version	版本组件
 app	应用入口
 button	按钮组件
+styles.global.less	全局样式
+index.ts	模块入口
+global	全局访问入口

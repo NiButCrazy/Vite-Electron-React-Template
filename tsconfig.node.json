@@ -5,6 +5,11 @@
     "composite": true,
     "types": ["electron-vite/node"],
 
+    "paths": {
+      "@static/*": [
+        "./static/*"
+      ]
+    },
     "moduleResolution": "bundler",
     "noEmit": true,
 

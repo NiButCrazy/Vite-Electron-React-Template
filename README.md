@@ -6,7 +6,6 @@
 而 `public` 目录下的静态资源被引用时无需添加后缀，但路径需要以 `/` 开头
 
 ### 第三方库
-- Tailwind CSS - 基础样式表
 - React Router - 路由管理
 - Zustand - 状态管理
 - Less - 样式预处理

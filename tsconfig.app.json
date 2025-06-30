@@ -20,6 +20,9 @@
       ],
       "@utils/*": [
         "./src/renderer/src/utils/*"
+      ],
+      "@global/*": [
+        "./src/renderer/src/global/*"
       ]
     },
     "module": "ESNext",

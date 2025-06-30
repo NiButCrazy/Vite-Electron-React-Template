@@ -23,7 +23,6 @@ flowchart LR
                 end
                 subgraph styles3[styles 样式]
                     ...6[...]
-                    index.css[index.css 全局样式]
                 end
                 assets3 --> lib3
                 styles3 --样式表-->lib3[Button.tsx] --导出至--> index3.ts[index.ts<br>...]
@@ -31,8 +30,9 @@ flowchart LR
             subgraph pages 业务界面组件库
                 subgraph Home 组件
                     subgraph assets1[assets 资源]
-                        react.svg
-                        vite.svg
+                        subgraph images
+                            react.svg
+                        end
                     end
                     subgraph lib1[lib 代码]
                         Home.tsx[Home.tsx]
@@ -52,11 +52,15 @@ flowchart LR
         components --组件挂载--> router.tsx
         main.tsx[main.tsx 逻辑入口]
         router.tsx --路由挂载--> main.tsx
-
+        subgraph global[global 全局访问入口]
+            index.css[index.css 全局样式]
+        end
+        global --全局属性挂载--> main.tsx
     end
-    subgraph public 公共资源根
+    subgraph public[public 公共资源根]
         subgraph images
             vitelogo[vite.svg]
         end
     end
     index.html[index.html 页面入口]
+    public --静态资源--> index.html

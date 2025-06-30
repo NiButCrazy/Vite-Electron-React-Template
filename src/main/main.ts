@@ -2,7 +2,7 @@ import { app, shell, BrowserWindow, ipcMain, session } from 'electron'
 import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import { join } from 'path'
-import icon from '../../static/icon.png?asset'
+import icon from '@static/icon.png?asset'
 
 
 function createWindow(): void {
