@@ -33,7 +33,7 @@ snap	截图
 videos	视频
 electron.vite.config.ts	Web 应用配置
 electron-builder.yml	应用打包配置
-tsconfig.web.json	类型检查配置
+tsconfig.app.json	类型检查配置
 main	主进程
 preload	预加载
 renderer	渲染器
