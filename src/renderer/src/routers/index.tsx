@@ -2,7 +2,7 @@ import { createHashRouter } from "react-router";
 import App from "@components/app";
 import { Home } from "@components/pages";
 
-const router = createHashRouter([
+const index = createHashRouter([
   {
     path: "/",
     Component: App,
@@ -12,4 +12,4 @@ const router = createHashRouter([
   },
 ]);
 
-export default router
+export default index

@@ -16,7 +16,7 @@ hooks	自定义钩子
 pages	业务界面
 utils	工具模块
 main.tsx	项目逻辑入口
-vite-env.d.ts	Vite 路径配置
+vite-env.d.ts	类型声明
 router.tsx	路由管理模块
 config.ts	配置管理模块
 tsconfig.json	TS 配置文件入口
@@ -45,3 +45,4 @@ button	按钮组件
 styles.global.less	全局样式
 index.ts	模块入口
 global	全局访问入口
+routers	路由管理

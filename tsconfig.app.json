@@ -24,6 +24,9 @@
       ],
       "@global/*": [
         "./src/renderer/src/global/*"
+      ],
+      "@hooks/*": [
+        "./src/renderer/src/hooks/*"
       ]
     },
     "module": "ESNext",
