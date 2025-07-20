@@ -1,5 +1,11 @@
 # Vite + Electron + React + TypeScript 创建模板
 个人自用
+
+## 安装使用
+```shell
+npm create nbc-app < projectName| 可选 >
+```
+> 当然也可以直接克隆项目
 ### 注意事项
 根目录的 `static` 目录下的静态资源被引用时最好加入 `?asset` 作为后缀，路径正常填写
 
