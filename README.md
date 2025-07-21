@@ -32,27 +32,27 @@ $ yarn
 
 ```bash
 # 开发调试
-$ yarn dev
+$ pnpm dev
 
 # 构建预览
-$ yarn start
+$ pnpm start
 
 # 渲染器调试
-$ yarn dev --rendererOnly
+$ pnpm dev --rendererOnly
 
 # 热重载调试
-$ yarn dev --w
+$ pnpm dev --w
 ```
 
 ### 构建发布
 
 ```bash
 # For windows
-$ yarn build:win
+$ pnpm build:win
 
 # For macOS
-$ yarn build:mac
+$ pnpm build:mac
 
 # For Linux
-$ yarn build:linux
+$ pnpm build:linux
 ```
