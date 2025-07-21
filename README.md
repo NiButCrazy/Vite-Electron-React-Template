@@ -25,7 +25,7 @@ npm create nbc-app < projectName | 可选 >
 ### 安装依赖
 
 ```bash
-$ yarn
+$ pnpm
 ```
 
 ### 运行调试
