@@ -8,4 +8,4 @@ dist
 .out/main/
 .out/preload/
 .out/renderer/
-vsc.xml
+.idea/vcs.xml

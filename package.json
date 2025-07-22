@@ -20,7 +20,10 @@
     "version": "nbc-auto-changelog -p && git add CHANGELOG.md"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "electron"]
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "electron"
+    ]
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.1",
@@ -38,12 +41,12 @@
     "electron-devtools-installer": "^4.0.0",
     "electron-vite": "^3.1.0",
     "less": "^4.3.0",
+    "nbc-auto-changelog": "^1.0.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router": "^7.5.1",
     "typescript": "^5.8.3",
     "vite": "^6.3.4",
-    "zustand": "^5.0.3",
-    "nbc-auto-changelog": "^1.0.3"
+    "zustand": "^5.0.3"
   }
 }
