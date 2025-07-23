@@ -21,7 +21,7 @@ function createWindow(): void {
   })
 
   // 自定义开发者工具字体
-  devtools_custom_font(mainWindow)
+  devtools_custom_font(mainWindow, 13)
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
@@ -41,8 +41,6 @@ function createWindow(): void {
     mainWindow.loadFile(join(__dirname, `../renderer/index.html`))
   }
 }
-
-
 
 // 当 Electron 完成初始化并准备好创建浏览器窗口时，将调用此方法
 // 某些 API 只能在此事件发生后使用
@@ -78,7 +76,6 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
-
 
 // 在此文件中，您可以包含应用程序的特定 main process 代码的其余部分
 // 您也可以将它们放在单独的文件中，并在此处要求它们
