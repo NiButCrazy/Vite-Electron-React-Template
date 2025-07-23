@@ -5,7 +5,7 @@
     <scripts>
       <script value="dev" />
     </scripts>
-    <arguments value="-w" />
+    <arguments value="-w --sourcemap --remote-debugging-port=9222" />
     <node-interpreter value="project" />
     <envs />
     <method v="2" />

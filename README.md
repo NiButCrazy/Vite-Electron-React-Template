@@ -26,6 +26,8 @@ npm create nbc-app < projectName | 可选 >
 
 ```bash
 $ pnpm
+# npm
+# yarn
 ```
 
 ### 运行调试
@@ -43,6 +45,8 @@ $ pnpm dev --rendererOnly
 # 热重载调试
 $ pnpm dev --w
 ```
+> [!TIP]
+> `断点调试`详见[这篇文章](https://cn.electron-vite.org/guide/debugging#webstorm)
 
 ### 构建发布
 

@@ -5,7 +5,7 @@
     <scripts>
       <script value="dev" />
     </scripts>
-    <arguments value="--rendererOnly" />
+    <arguments value="--rendererOnly --remote-debugging-port=9222" />
     <node-interpreter value="project" />
     <envs />
     <method v="2" />

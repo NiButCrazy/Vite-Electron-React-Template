@@ -46,6 +46,7 @@ export default defineConfig({
       }
     },
     css: {
+      devSourcemap: true,
       modules: {
         localsConvention: 'dashesOnly',
         generateScopedName: '[local]-[hash:5]'
