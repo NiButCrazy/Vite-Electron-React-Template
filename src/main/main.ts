@@ -23,9 +23,18 @@ function createWindow(): void {
   // 自定义开发者工具字体
   devtools_custom_font(mainWindow, 13)
 
+  var first_start = true
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
-    if (is.dev) mainWindow.webContents.openDevTools()
+    
+    // 这里是第一次启动刷新重载是为了正确加载react开发工具扩展，否则需要手动刷新
+    if (is.dev) {
+      if (first_start) {
+        first_start = false
+        mainWindow.reload()
+        mainWindow.webContents.openDevTools()
+      }
+    }
   })
 
   mainWindow.webContents.setWindowOpenHandler((details) => {

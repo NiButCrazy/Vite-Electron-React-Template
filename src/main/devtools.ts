@@ -1,5 +1,5 @@
-import { BrowserWindow, session } from "electron";
-import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer';
+import { BrowserWindow, session } from 'electron'
+import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
 
 
 /**
@@ -8,9 +8,9 @@ import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-insta
  * @param font_size 字体大小
  */
 export function devtools_custom_font(
-    mainWindow: BrowserWindow,
-    font_size: number = 12
-  ) {
+  mainWindow: BrowserWindow,
+  font_size: number = 12
+) {
   mainWindow.webContents.on('devtools-opened', () => {
     const css = `
         :root {
@@ -29,10 +29,10 @@ export function devtools_custom_font(
         body {
             --default-font-family: JetBrains Maple Mono, system-ui,sans-serif;
         }
-    `;
+    `
     mainWindow.webContents.devToolsWebContents!.executeJavaScript(`
         const overriddenStyle = document.createElement('style');
-        overriddenStyle.innerHTML = '${css.replaceAll('\n', ' ')}';
+        overriddenStyle.innerHTML = '${ css.replaceAll('\n', ' ') }';
         document.body.append(overriddenStyle);
         document.querySelectorAll('.platform-windows').forEach(el => el.classList.remove('platform-windows'));
         addStyleToAutoComplete();
@@ -59,8 +59,8 @@ export function devtools_custom_font(
                 }
             });
         }
-    `);
-  });
+    `)
+  })
 }
 
 /**
@@ -70,7 +70,7 @@ export function load_extensions() {
   installExtension(REACT_DEVELOPER_TOOLS).then(() => {
     session.defaultSession.getAllExtensions().map((e) => {
       session.defaultSession.loadExtension(e.path)
-      console.log(`已加载扩展:  ${e.name}`)
+      console.log(`已加载扩展:  ${ e.name }`)
     })
   }).catch((err) => {
     console.log('无法加载扩展: ', err)

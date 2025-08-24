@@ -1,15 +1,20 @@
-import { createHashRouter } from "react-router";
-import App from "@components/app";
-import { Home } from "@components/pages";
+import { createBrowserRouter, redirect } from 'react-router'
+import App from '@components/app'
+import { Home } from '@components/pages'
 
-const index = createHashRouter([
+
+const index = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     Component: App,
     children: [
-      { index: true, Component: Home}
+      { index: true, Component: Home }
     ]
   },
-]);
+  {
+    path: '/index.html',
+    loader: () => redirect('/')
+  },
+])
 
 export default index

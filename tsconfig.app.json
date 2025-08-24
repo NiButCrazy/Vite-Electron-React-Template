@@ -31,11 +31,9 @@
     },
     "module": "ESNext",
     "skipLibCheck": true,
-
     /* Bundler mode */
     "moduleResolution": "bundler",
     "noEmit": true,
-
     /* Linting */
     "strict": true,
     "noUnusedLocals": false,
