@@ -15,18 +15,18 @@ function createWindow(): void {
     backgroundMaterial: 'auto',
     ...(process.platform === 'linux' ? {} : { icon }),
     webPreferences: {
-      preload: join(__dirname, '../preload/index.js'),
+      preload: join(__dirname, '../preload/index.mjs'),
       sandbox: false,
     }
   })
 
   // 自定义开发者工具字体
-  devtools_custom_font(mainWindow, 13)
+  devtools_custom_font(mainWindow, 14)
 
   var first_start = true
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
-    
+
     // 这里是第一次启动刷新重载是为了正确加载react开发工具扩展，否则需要手动刷新
     if (is.dev) {
       if (first_start) {
