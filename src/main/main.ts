@@ -20,18 +20,19 @@ function createWindow(): void {
     }
   })
 
+  // 只在开发环境加载扩展
+  if (is.dev) load_extensions(mainWindow)
+
   // 自定义开发者工具字体
   devtools_custom_font(mainWindow, 14)
 
-  var first_start = true
+  let first_start = true
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
 
-    // 这里是第一次启动刷新重载是为了正确加载react开发工具扩展，否则需要手动刷新
     if (is.dev) {
       if (first_start) {
         first_start = false
-        mainWindow.reload()
         mainWindow.webContents.openDevTools()
       }
     }
@@ -56,9 +57,6 @@ function createWindow(): void {
 app.whenReady().then(() => {
   // 为 Windows 设置应用用户模型 ID
   electronApp.setAppUserModelId('com.electron')
-
-  // 只在开发环境加载扩展
-  if (is.dev) load_extensions()
 
   // 开发中 F12 的默认打开或关闭 DevTools
   // 并在生产环境中忽略 CommandOrControl + R

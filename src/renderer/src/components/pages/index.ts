@@ -1,1 +1,6 @@
-export { default as Home } from './home'
+import Home from './home/Home.tsx'
+
+
+export {
+  Home
+}

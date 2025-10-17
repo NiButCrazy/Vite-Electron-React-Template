@@ -1,1 +1,6 @@
-export { default } from './lib/Versions'
+import Versions from './Versions.tsx'
+
+
+export {
+  Versions
+}

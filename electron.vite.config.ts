@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   main: {
-    plugins: [externalizeDepsPlugin()],
+    plugins: [ externalizeDepsPlugin() ],
     publicDir: './static',
     build: {
       outDir: '.out/main',
@@ -22,7 +22,7 @@ export default defineConfig({
     }
   },
   preload: {
-    plugins: [externalizeDepsPlugin()],
+    plugins: [ externalizeDepsPlugin() ],
     publicDir: './static',
     build: {
       outDir: '.out/preload',
@@ -42,7 +42,8 @@ export default defineConfig({
         '@renderer': resolve(__dirname, './src/renderer/src'),
         '@components': resolve(__dirname, './src/renderer/src/components'),
         '@utils': resolve(__dirname, './src/renderer/src/utils'),
-        '@global': resolve(__dirname, './src/renderer/src/global')
+        '@global': resolve(__dirname, './src/renderer/src/global'),
+        '@hooks': resolve(__dirname, './src/global')
       }
     },
     css: {

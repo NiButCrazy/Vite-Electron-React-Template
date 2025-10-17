@@ -1,5 +1,5 @@
-import { BrowserWindow, session } from 'electron'
-import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-installer'
+import { BrowserWindow } from 'electron'
+import path from 'node:path'
 
 
 /**
@@ -9,7 +9,7 @@ import { installExtension, REACT_DEVELOPER_TOOLS } from 'electron-devtools-insta
  */
 export function devtools_custom_font(
   mainWindow: BrowserWindow,
-  font_size: number = 12
+  font_size: number = 13
 ) {
   mainWindow.webContents.on('devtools-opened', () => {
     const css = `
@@ -63,17 +63,21 @@ export function devtools_custom_font(
   })
 }
 
+const reactDevtools = path.join(__dirname, '../../static/react-devtools')
+
 /**
  * 加载谷歌扩展
  */
-export function load_extensions() {
-  installExtension(REACT_DEVELOPER_TOOLS).then(() => {
-    session.defaultSession.getAllExtensions().map((e) => {
-      session.defaultSession.loadExtension(e.path)
-      console.log(`已加载扩展:  ${ e.name }`)
-    })
-  }).catch((err) => {
-    console.log('无法加载扩展: ', err)
+export function load_extensions(mainWindow: BrowserWindow) {
+  const ses = mainWindow.webContents.session
+  ses.extensions.loadExtension(reactDevtools)
+  // ! 点睛之笔!!!
+  //  React 开发者工具的内容脚本尝试与后台服务工作者通信，而后者在启动时（首次安装后）并未运行,所以手动运行
+  ses.extensions.on('extension-ready', (_, extension) => {
+    const manifest = extension.manifest
+    if (manifest.manifest_version === 3 && manifest?.background?.service_worker) {
+      ses.serviceWorkers.startWorkerForScope(extension.url)
+    }
   })
 }
 
