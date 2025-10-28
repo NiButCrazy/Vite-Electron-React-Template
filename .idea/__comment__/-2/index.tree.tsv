@@ -46,3 +46,4 @@ styles.global.less	全局样式
 index.ts	模块入口
 global	全局访问入口
 routers	路由管理
+pnpm-lock.yaml	项目依赖锁
