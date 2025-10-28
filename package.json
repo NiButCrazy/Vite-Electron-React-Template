@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "@electron-toolkit/preload": "^3.0.1",
+    "@electron-toolkit/preload": "^3.0.2",
     "@electron-toolkit/utils": "^4.0.0"
   },
   "devDependencies": {
@@ -37,8 +37,8 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react": "^5.1.0",
-    "electron": "^38.0.0",
-    "electron-builder": "^26.0.2",
+    "electron": "^38.4.0",
+    "electron-builder": "^26.0.12",
     "electron-vite": "^4.0.1",
     "less": "^4.4.2",
     "nbc-auto-changelog": "^1.1.0",
