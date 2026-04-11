@@ -1,6 +1,6 @@
 import { Button } from '@components/buttons'
 import electronLogo from './assets/images/electron.svg'
-import s_ from './styles/Home.module.less'
+import s_ from './assets/styles/Home.module.less'
 
 
 export default function Home() {

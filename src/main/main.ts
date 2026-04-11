@@ -24,7 +24,7 @@ function createWindow(): void {
   if (is.dev) load_extensions(mainWindow)
 
   // 自定义开发者工具字体
-  devtools_custom_font(mainWindow, 14)
+  devtools_custom_font(mainWindow, 13)
 
   let first_start = true
   mainWindow.on('ready-to-show', () => {
@@ -33,6 +33,7 @@ function createWindow(): void {
     if (is.dev) {
       if (first_start) {
         first_start = false
+        mainWindow.webContents.reload()
         mainWindow.webContents.openDevTools()
       }
     }
@@ -50,6 +51,7 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(join(__dirname, `../renderer/index.html`))
   }
+
 }
 
 // 当 Electron 完成初始化并准备好创建浏览器窗口时，将调用此方法

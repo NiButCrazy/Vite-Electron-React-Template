@@ -1,9 +1,8 @@
 import { createHashRouter } from 'react-router'
-import App from '@components/app'
-import { Home } from '@components/pages'
+import { Home, App } from '@renderer//pages'
 
 
-const index = createHashRouter([
+const router = createHashRouter([
   {
     path: '/',
     Component: App,
@@ -13,4 +12,4 @@ const index = createHashRouter([
   }
 ])
 
-export default index
+export default router

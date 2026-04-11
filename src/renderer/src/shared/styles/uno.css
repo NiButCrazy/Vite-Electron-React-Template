@@ -1,0 +1,4 @@
+#root {
+  @apply
+  flex flex-col items-center justify-center m-b-80px
+}

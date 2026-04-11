@@ -22,8 +22,8 @@
       "@utils/*": [
         "./src/renderer/src/utils/*"
       ],
-      "@global/*": [
-        "./src/renderer/src/global/*"
+      "@shared/*": [
+        "./src/renderer/src/shared/*"
       ],
       "@hooks/*": [
         "./src/renderer/src/hooks/*"

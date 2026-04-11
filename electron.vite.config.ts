@@ -1,11 +1,11 @@
-import { defineConfig, externalizeDepsPlugin } from 'electron-vite'
+import { defineConfig, } from 'electron-vite'
 import { resolve } from 'path'
+import UnoCSS from 'unocss/vite'
 import react from '@vitejs/plugin-react'
 
 
 export default defineConfig({
   main: {
-    plugins: [ externalizeDepsPlugin() ],
     publicDir: './static',
     build: {
       outDir: '.out/main',
@@ -22,7 +22,6 @@ export default defineConfig({
     }
   },
   preload: {
-    plugins: [ externalizeDepsPlugin() ],
     publicDir: './static',
     build: {
       outDir: '.out/preload',
@@ -42,8 +41,8 @@ export default defineConfig({
         '@renderer': resolve(__dirname, './src/renderer/src'),
         '@components': resolve(__dirname, './src/renderer/src/components'),
         '@utils': resolve(__dirname, './src/renderer/src/utils'),
-        '@global': resolve(__dirname, './src/renderer/src/global'),
-        '@hooks': resolve(__dirname, './src/global')
+        '@shared': resolve(__dirname, './src/renderer/src/shared'),
+        '@hooks': resolve(__dirname, './src/renderer/src/hooks')
       }
     },
     css: {
@@ -54,7 +53,13 @@ export default defineConfig({
       }
     },
     plugins: [
-      react()
+      UnoCSS(),
+      react({
+          babel: {
+            plugins: [ 'babel-plugin-react-compiler' ],
+          }
+        }
+      ),
     ]
   }
 })

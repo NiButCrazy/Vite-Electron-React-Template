@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import s_ from './styles/Versions.module.less'
+import s_ from './assets/styles/Versions.module.less'
 
 
 function Versions(): React.JSX.Element {
-  if (window.electron) {
-    const [ versions ] = useState(window.electron.process.versions)
-
+  const [ versions ] = useState(window.electron?.process.versions)
+  if (versions) {
     return (
       <ul className={ s_.versions }>
         <li className="electron-version">Electron v{ versions.electron }</li>

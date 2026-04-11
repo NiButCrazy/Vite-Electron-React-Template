@@ -1,14 +1,14 @@
-index.tree.tsv	📝 树状视图注释
+index.tree.tsv	树状视图注释
 __comment__	注释文件根
 src	源代码目录
 static	静态资源目录
 dist	打包输出目录
 build	打包资源目录
-.gitignore	🔕 Git 忽略文件配置
+.gitignore	Git 忽略文件配置
 public	公共资源根
 index.html	项目入口视图
 package.json	项目包管理
-README.md	🔖 自述文件
+README.md	自述文件
 vite.config.ts	Vite 插件配置
 assets	组件资源目录
 components	组件库
@@ -21,7 +21,7 @@ router.tsx	路由管理模块
 config.ts	配置管理模块
 tsconfig.json	TS 配置文件入口
 tsconfig.node.json	Node 配置
-Buttons	按钮类组件
+buttons	按钮类组件
 .idea	IDE 配置目录
 .out	构建输出目录
 audios	音频
@@ -45,5 +45,13 @@ button	按钮组件
 styles.global.less	全局样式
 index.ts	模块入口
 global	全局访问入口
-routers	路由管理
+routes	路由管理
 pnpm-lock.yaml	项目依赖锁
+constants	共享常量
+stores	存储管理
+shared	全局共享
+types	类型声明
+theme	主题管理组件
+eslint.config.js	静态检查配置
+uno.config.ts	原子样式配置
+.github	工作流配置
