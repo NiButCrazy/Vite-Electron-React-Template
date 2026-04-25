@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "React Developer Tools 汉化版",
-  "description": "在 Chrome 浏览器开发工具中添加 React 调试工具(基于提交版本 aa00717a2b on 2025/11/24)",
+  "description": "在 Chrome 浏览器开发工具中添加 React 调试工具(基于提交版本 39d76e6604 on 2026/4/25)",
   "version": "7.0.1",
-  "version_name": "7.0.1 (2025/11/24)",
+  "version_name": "7.0.1 (2026/4/25)",
   "minimum_chrome_version": "114",
   "icons": {
     "16": "icons/16-production.png",

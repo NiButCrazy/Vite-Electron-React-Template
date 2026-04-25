@@ -66,6 +66,10 @@ $ pnpm dev --w
 
 ### 构建发布
 
+> [!IMPORTANT]
+> 构建发布前请先固定 electron 版本
+
+
 ```bash
 # For windows
 $ pnpm build:win
