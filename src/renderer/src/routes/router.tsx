@@ -1,5 +1,5 @@
 import { createHashRouter } from 'react-router'
-import { Home, App } from '@renderer//pages'
+import { Home, App } from '@renderer/pages'
 
 
 const router = createHashRouter([

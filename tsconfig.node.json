@@ -5,7 +5,7 @@
   "compilerOptions": {
     "composite": true,
     "types": ["electron-vite/node"],
-
+    "lib": ["ES2023"],
     "paths": {
       "@static/*": [
         "./static/*"
