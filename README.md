@@ -24,16 +24,18 @@ npm create nbc-app < projectName | 可选 >
 ### 第三方库
 
 - #### 生产
-    - React Router - 路由管理
-    - Zustand - 全局状态管理
     - Immer - 处理状态结构
-    - @unocss/reset - 统一浏览器之间的原生样式
+    - Zustand - 全局状态管理
     - clsx - 样式类名管理工具
+    - @tanstack/react-router - 路由管理
+    - @unocss/reset - 统一浏览器之间的原生样式
 - #### 开发
     - Less - 样式预处理
     - UnoCSS - 原子化 CSS
     - React Compiler - React 性能编译器
     - Eslint - React Hooks 与 Refresh 静态代码检查
+    - @tanstack/router-plugin - 集成路由自动生成器插件
+    - @tanstack/react-router-devtools - 专用路由调试工具
 
 ## 项目配置
 
