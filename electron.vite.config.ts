@@ -1,4 +1,5 @@
-import { defineConfig, } from 'electron-vite'
+import { tanstackRouter }  from '@tanstack/router-plugin/vite'
+import { defineConfig } from 'electron-vite'
 import { resolve } from 'path'
 import UnoCSS from 'unocss/vite'
 import react from '@vitejs/plugin-react'
@@ -53,6 +54,10 @@ export default defineConfig({
       }
     },
     plugins: [
+      // tanstack router 自动生成器
+      tanstackRouter({ target: 'react', autoCodeSplitting: true, 
+        generatedRouteTree: "./src/routes/-routes.tree.ts" 
+      }),
       UnoCSS(),
       react({
           babel: {

@@ -1,5 +1,5 @@
+import { Outlet } from '@tanstack/react-router'
 import { Versions } from '@components/version'
-import { Outlet } from 'react-router'
 import './assets/styles/App.module.less'
 
 

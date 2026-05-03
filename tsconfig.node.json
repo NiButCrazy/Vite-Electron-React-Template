@@ -12,10 +12,12 @@
       ]
     },
     "moduleResolution": "bundler",
-    "noEmit": true,
-
     "module": "ESNext",
     "skipLibCheck": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
 
     /* Linting */
     "strict": true,
@@ -25,6 +27,5 @@
     "noUncheckedSideEffectImports": true,
     "allowSyntheticDefaultImports": true,
     "useDefineForClassFields": true,
-    "allowImportingTsExtensions": true
   }
 }
